@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		61201027224BCE7F00781DE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61201026224BCE7F00781DE2 /* AppDelegate.swift */; };
-		61201029224BCE7F00781DE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61201028224BCE7F00781DE2 /* ViewController.swift */; };
+		61201029224BCE7F00781DE2 /* TextParsingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61201028224BCE7F00781DE2 /* TextParsingViewController.swift */; };
 		6120102C224BCE7F00781DE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6120102A224BCE7F00781DE2 /* Main.storyboard */; };
 		6120102E224BCE8100781DE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6120102D224BCE8100781DE2 /* Assets.xcassets */; };
 		61201031224BCE8100781DE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6120102F224BCE8100781DE2 /* LaunchScreen.storyboard */; };
+		6120103B224BD2E300781DE2 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6120103A224BD2E300781DE2 /* DataService.swift */; };
+		6120103D224BE11500781DE2 /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6120103C224BE11500781DE2 /* ParseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		61201023224BCE7F00781DE2 /* Text Parsing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Text Parsing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61201026224BCE7F00781DE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		61201028224BCE7F00781DE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		61201028224BCE7F00781DE2 /* TextParsingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextParsingViewController.swift; sourceTree = "<group>"; };
 		6120102B224BCE7F00781DE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6120102D224BCE8100781DE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61201030224BCE8100781DE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61201032224BCE8100781DE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6120103A224BD2E300781DE2 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		6120103C224BE11500781DE2 /* ParseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,32 @@
 		61201025224BCE7F00781DE2 /* Text Parsing */ = {
 			isa = PBXGroup;
 			children = (
+				61201039224BD1EE00781DE2 /* Services */,
+				61201038224BCF0300781DE2 /* Controller */,
 				61201026224BCE7F00781DE2 /* AppDelegate.swift */,
-				61201028224BCE7F00781DE2 /* ViewController.swift */,
 				6120102A224BCE7F00781DE2 /* Main.storyboard */,
 				6120102D224BCE8100781DE2 /* Assets.xcassets */,
 				6120102F224BCE8100781DE2 /* LaunchScreen.storyboard */,
 				61201032224BCE8100781DE2 /* Info.plist */,
 			);
 			path = "Text Parsing";
+			sourceTree = "<group>";
+		};
+		61201038224BCF0300781DE2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				61201028224BCE7F00781DE2 /* TextParsingViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		61201039224BD1EE00781DE2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6120103A224BD2E300781DE2 /* DataService.swift */,
+				6120103C224BE11500781DE2 /* ParseService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +157,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61201029224BCE7F00781DE2 /* ViewController.swift in Sources */,
+				6120103B224BD2E300781DE2 /* DataService.swift in Sources */,
+				6120103D224BE11500781DE2 /* ParseService.swift in Sources */,
+				61201029224BCE7F00781DE2 /* TextParsingViewController.swift in Sources */,
 				61201027224BCE7F00781DE2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
