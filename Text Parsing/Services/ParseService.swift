@@ -15,22 +15,33 @@ class ParseService {
         guard s.count > 0 else {return ""}
         
         var subStr = ""
-        var accumStr = ""
+        var accumulatedStr = ""
         var returnedWords = ""
-        var leftIndex = 0
+        var subLeftIndex = 0
+        var accumLeftIndex = 0
         
         for i in 0...s.count {
             
-            accumStr = String(s[...s.index(s.startIndex, offsetBy: i - 1 > 0 ? i - 1 : 0)])
-            subStr = String(s[s.index(s.startIndex, offsetBy: leftIndex)...s.index(s.startIndex, offsetBy: i - 1 > 0 ? i - 1 : 0)])
+            accumulatedStr = String(s[s.index(s.startIndex, offsetBy: accumLeftIndex)...s.index(s.startIndex, offsetBy: i - 1 > 0 ? i - 1 : 0)])
+            subStr = String(s[s.index(s.startIndex, offsetBy: subLeftIndex)...s.index(s.startIndex, offsetBy: i - 1 > 0 ? i - 1 : 0)])
             
             if let _ = wordsDict[subStr] {
-                returnedWords.append(subStr + " ")
-                leftIndex = i
+                if returnedWords.count > 0 {
+                    returnedWords.append(" ")
+                }
+                returnedWords.append(subStr)
+                if subLeftIndex > accumLeftIndex {
+                    accumLeftIndex = subLeftIndex
+                }
+                subLeftIndex = i
             }
-            if let _ = wordsDict[accumStr], !returnedWords.contains(accumStr) {
-                returnedWords.append(accumStr + " ")
-                leftIndex = i
+            if let _ = wordsDict[accumulatedStr], !returnedWords.contains(accumulatedStr) {
+                if returnedWords.count > 0 {
+                    returnedWords.append(" ")
+                }
+                returnedWords.append(accumulatedStr)
+                subLeftIndex = i
+                accumLeftIndex = i
             }
         }
         return returnedWords
