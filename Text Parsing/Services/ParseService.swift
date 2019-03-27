@@ -30,9 +30,8 @@ class ParseService {
             }
             if let _ = wordsDict[accumStr], !returnedWords.contains(accumStr) {
                 returnedWords.append(accumStr + " ")
+                leftIndex = i
             }
-            
-            
         }
         return returnedWords
     }
